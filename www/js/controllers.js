@@ -2,6 +2,7 @@ angular.module('starter.controllers', [])
 
 .controller('IncidentsCtrl', function($scope, Incidents) {
   $scope.incidents = Incidents.all();
+  $scope.showReport = true;
 })
 
 .controller('IncidentDetailCtrl', function($scope, $stateParams, Incidents) {

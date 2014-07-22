@@ -11,3 +11,5 @@
 .item-complex .item-content{
 	padding: 15px;
 }
+
+.hide-tabs .has-tabs { bottom: 0px; }
