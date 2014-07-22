@@ -6,5 +6,11 @@
 -->
 <ion-view title="{{friend.name}}">
   <ion-content has-header="true" padding="true">
+	  <label class="item item-input item-select">
+	    <div class="input-label">
+	      Type of {{friend.name}}
+	    </div> 
+	    <select ng-model = "subcategory" ng-options = "select as subcategory.name for subcategory in friend.subcategories"></select>
+		</label>
   </ion-content>
 </ion-view>
