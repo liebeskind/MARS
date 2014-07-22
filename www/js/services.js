@@ -10,7 +10,7 @@ angular.module('starter.services', [])
   var friends = [
     { id: 0, name: 'Crime' },
     { id: 1, name: 'Fire' },
-    { id: 2, name: 'Medical' },
+    { id: 2, name: 'Medical Emergency' },
   ];
 
   return {
