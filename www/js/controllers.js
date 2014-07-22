@@ -1,8 +1,5 @@
 angular.module('starter.controllers', [])
 
-.controller('DashCtrl', function($scope) {
-})
-
 .controller('IncidentsCtrl', function($scope, Incidents) {
   $scope.incidents = Incidents.all();
 })
@@ -22,12 +19,12 @@ angular.module('starter.controllers', [])
         url: 'backend/incidentReporting',
         method: 'POST',
         params: {
-            page: page,
-            sortFields: $scope.sortInfo.fields[0],
-            sortDirections: $scope.sortInfo.directions[0]
+            // page: page,
+            // sortFields: $scope.sortInfo.fields[0],
+            // sortDirections: $scope.sortInfo.directions[0]
         }
     }).success(function (data) {
-        $scope.persons = data;
+        // $scope.persons = data;
     });
   };
 
