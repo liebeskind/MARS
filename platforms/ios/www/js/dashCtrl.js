@@ -4,8 +4,8 @@ angular.module('map.controller', [])
       
       $scope.map = {
           center: {
-              latitude: 45,
-              longitude: -73
+            latitude: 45,
+            longitude: -73
           },
           zoom: 8
       };
