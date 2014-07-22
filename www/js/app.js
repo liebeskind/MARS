@@ -58,11 +58,22 @@ angular.module('starter', ['ionic', 'map.controller', 'starter.controllers', 'st
         }
       }
     })
+    
     .state('tab.friend-detail', {
       url: '/incident/:incidentId',
       views: {
         'tab-incidents': {
           templateUrl: 'templates/incident-detail.html',
+          controller: 'IncidentDetailCtrl'
+        }
+      }
+    })
+
+    .state('tab.success', {
+      url: '/incident/success',
+      views: {
+        'tab-incidents': {
+          templateUrl: 'templates/reportsuccess.html',
           controller: 'IncidentDetailCtrl'
         }
       }
