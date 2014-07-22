@@ -24,7 +24,7 @@ public class SqlDal extends DAL {
 				return;
 			}
 		
-			PreparedStatement statement = conn.prepareStatement("insert sysdate to dual");
+			PreparedStatement statement = conn.prepareStatement(this.ConvertIncidentsToInsertStatement(incidents));
 		
 			statement.execute();
 		
@@ -63,11 +63,11 @@ public class SqlDal extends DAL {
 				return null;
 			}
 		
-			PreparedStatement statement = conn.prepareStatement("select sysdate from dual");
+			PreparedStatement statement = conn.prepareStatement(this.CreateQueryFromIncident(location,date,catagory,type));
 		
 			ResultSet results = statement.executeQuery();
 		
-			while(results.next())
+			while (results.next())
 			{
 				System.out.print(results.getString(0));
 				returnValue.add(this.ConvertRowToIncident(results.getString(0)));
@@ -81,9 +81,21 @@ public class SqlDal extends DAL {
 		return returnValue;		
 	}
 
+	private String CreateQueryFromIncident(ILocation location, IDate date,
+			ISubCatagory catagory, IncidentType type) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 	private IIncident ConvertRowToIncident(String string) {
 		// TODO Auto-generated method stub
 		return null;
 	}
+	
+	private String ConvertIncidentsToInsertStatement(List<IIncident> incidents) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 
 }
