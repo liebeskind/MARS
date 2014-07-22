@@ -2,6 +2,12 @@ angular.module('starter.controllers', [])
 
 .controller('IncidentsCtrl', function($scope, Incidents) {
   $scope.incidents = Incidents.all();
+  $scope.showReport = true;
+
+  console.log('HideCtrl');
+  var tabs = document.querySelectorAll('div.tabs')[0];
+  tabs = angular.element(tabs);
+  tabs.css('display', 'none');
 })
 
 .controller('IncidentDetailCtrl', function($scope, $stateParams, Incidents) {
