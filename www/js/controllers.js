@@ -9,4 +9,10 @@ angular.module('starter.controllers', [])
 
 .controller('IncidentDetailCtrl', function($scope, $stateParams, Friends) {
   $scope.friend = Friends.get($stateParams.friendId);
+  $scope.thisIncident = {};
+  $scope.thisIncident.date = new Date();
+
+  $scope.submitReport = function(thisIncident) {
+  	console.log(thisIncident);
+  }
 })
