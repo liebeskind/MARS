@@ -85,8 +85,18 @@ public class SqlDal extends DAL {
 
 	private String CreateQueryFromIncident(ILocation location, IDate date,
 			ISubCatagory catagory, IncidentType type) {
-		// TODO Auto-generated method stub
-		return null;
+		return "SELECT * FROM `mars`.`incident` where "
+				+ " (`submitted_date` >= '" + (date.GetReportTime().getTime() - date.GetDeviation()*60) + "' and "				
+				+ " `submitted_date` >= '" + date.GetReportTime().getTime() + "' and "
+				+ " `submitted_date` <= '" + date.GetReportTime().getTime() + "') AND "
+				+ " (`lower_left_lng` >= '" + location.GetLowerLeft().GetX() + "' and "
+				+ " `lower_left_lng` >= '" + location.GetLowerLeft().GetX() + "') AND "
+				+ " (`lower_left_lat` >= '" + location.GetLowerLeft().GetY() + "' and"
+				+ " `lower_left_lat` <= '" + location.GetLowerLeft().GetY() + "') AND"
+				+ " (`upper_right_lng` >= '" + location.GetUpperRight().GetX() + "' and "
+				+ " `upper_right_lng` <= '" + location.GetUpperRight().GetX() + "') AND "
+				+ " (`upper_right_lat` >= '" + location.GetUpperRight().GetY() + "' and"
+				+ " `upper_right_lat` <= '" + location.GetUpperRight().GetY() + "') ;";
 	}
 
 	private IIncident ConvertRowToIncident(String string) {
@@ -95,8 +105,22 @@ public class SqlDal extends DAL {
 	}
 	
 	private String ConvertIncidentsToInsertStatement(List<IIncident> incidents) {
-		// TODO Auto-generated method stub
-		return null;
+		String retVal = "";
+		for (IIncident incident : incidents)
+		{
+			retVal += "INSERT INTO `mars`.`incident` set "
+				+ "`incident_id` = '" + incident.GetId() + "'"
+				+ ", `submitted_date` = CURRENT_TIMESTAMP"
+				+ ", `comment` = '" + incident.GetComment() + "'"
+				+ ", `incident_date` = '" + incident.Date().GetReportTime() + "'"
+				+ ", `date_end` = '" + (incident.Date().GetReportTime().getTime() - incident.Date().GetDeviation()*60)  + "'"
+				+ ", `lower_left_lng` = '" + incident.GetLocation().GetLowerLeft().GetX() + "'"
+				+ ", `lower_left_lat` = '" + incident.GetLocation().GetLowerLeft().GetY() + "'"
+				+ ", `upper_right_lng` = '" + incident.GetLocation().GetUpperRight().GetX() + "'"
+				+ ", `upper_right_lat` = '" + incident.GetLocation().GetUpperRight().GetY() + "'"
+				+ ", `category_id` = '" + incident.Type().ordinal()*10 + incident.SubCatagory() + "'; ";
+		}
+		return retVal;
 	}
 
 
