@@ -85,19 +85,18 @@ public class SqlDal extends DAL {
 
 	private String CreateQueryFromIncident(ILocation location, IDate date,
 			ISubCatagory catagory, IncidentType type) {
-		String retVal = "";
-		for (IIncident incident : incidents)
-		{
-			retVal += "SELECT * FROM `mars`.`incident` where "
-				+ " `submitted_date` >= '" + (incident.Date().GetReportTime().getTime() - incident.Date().GetDeviation()*60) + "' and "				+ " `submitted_date` >= '" + incident.Date().GetReportTime().getTime() + "' and "
-				+ " `submitted_date` <= '" + incident.Date().GetReportTime().getTime() + "' "
-				+ ", `lower_left_lng` = '" + incident.GetLocation().GetLowerLeft().GetX() + "'"
-				+ ", `lower_left_lat` = '" + incident.GetLocation().GetLowerLeft().GetY() + "'"
-				+ ", `upper_right_lng` = '" + incident.GetLocation().GetUpperRight().GetX() + "'"
-				+ ", `upper_right_lat` = '" + incident.GetLocation().GetUpperRight().GetY() + "'"
-				+ ", `category_id` = '" + incident.SubCatagory() + "'; ";
-		}
-		return retVal;
+		return "SELECT * FROM `mars`.`incident` where "
+				+ " (`submitted_date` >= '" + (date.GetReportTime().getTime() - date.GetDeviation()*60) + "' and "				
+				+ " `submitted_date` >= '" + date.GetReportTime().getTime() + "' and "
+				+ " `submitted_date` <= '" + date.GetReportTime().getTime() + "') AND "
+				+ " (`lower_left_lng` >= '" + location.GetLowerLeft().GetX() + "' and "
+				+ " `lower_left_lng` >= '" + location.GetLowerLeft().GetX() + "') AND "
+				+ " (`lower_left_lat` >= '" + location.GetLowerLeft().GetY() + "' and"
+				+ " `lower_left_lat` <= '" + location.GetLowerLeft().GetY() + "') AND"
+				+ " (`upper_right_lng` >= '" + location.GetUpperRight().GetX() + "' and "
+				+ " `upper_right_lng` <= '" + location.GetUpperRight().GetX() + "') AND "
+				+ " (`upper_right_lat` >= '" + location.GetUpperRight().GetY() + "' and"
+				+ " `upper_right_lat` <= '" + location.GetUpperRight().GetY() + "') ;";
 	}
 
 	private IIncident ConvertRowToIncident(String string) {
