@@ -10,9 +10,7 @@ angular.module('map.controller', [])
           zoom: 16
       };
 
-      console.log('ShowCtrl');
 		  var tabs = document.querySelectorAll('div.tabs')[0];
 		  tabs = angular.element(tabs);
 		  tabs.css('display', '');
-
     });

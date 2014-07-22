@@ -15,6 +15,8 @@ angular.module('starter.controllers', [])
   $scope.thisIncident = {parentCategory: {name: $scope.incidentType.name, id: $scope.incidentType.id}, id: Math.random()};
   $scope.thisIncident.currentDate = new Date(); // sets default date/time to now
   $scope.thisIncident.date = new Date(); // sets default date/time to now
+  console.log($scope.incidentType)
+  $scope.thisIncident.subcategory = $scope.incidentType.subcategories[0]
   $scope.thisIncident.location = {};
   $scope.thisIncident.location.text = "Use Current Location"; // sets default date/time to now
   $scope.thisIncident.location.lat = 32.070123; // sets default date/time to now
