@@ -1,8 +1,5 @@
 angular.module('starter.controllers', [])
 
-.controller('DashCtrl', function($scope) {
-})
-
 .controller('IncidentsCtrl', function($scope, Incidents) {
   $scope.incidents = Incidents.all();
 })
