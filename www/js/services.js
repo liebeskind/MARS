@@ -9,13 +9,13 @@ angular.module('starter.services', [])
   // Some fake testing data
   var incidents = [
     { id: 0, name: 'Crime' , subcategories: 
-      [{name:'Theft'}, {name:'Sexual Abuse'}, {name:'Violence'}]
+      [{name:'Theft', distance: 1}, {name:'Sexual Abuse', distance: 1}, {name:'Violence', distance: 1}]
     },
     { id: 1, name: 'Fire', subcategories: 
-      [{name:'Residential'}, {name:'Commercial'}, {name:'Industrial'}]
+      [{name:'Residential', distance: 0.6}, {name:'Commercial', distance: 0.6}, {name:'Industrial', distance: 0.6}]
     },
     { id: 2, name: 'Medical Emergency', subcategories: 
-      [{name:'Need Ambulance'}, {name:'Car Accident'}, {name:'Heart Attack'}]
+      [{name:'Need Ambulance', distance: 0.2}, {name:'Car Accident', distance: 0.1}, {name:'Heart Attack', distance: 0.02}]
     }
   ];
 
