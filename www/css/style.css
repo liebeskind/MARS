@@ -7,3 +7,7 @@
 	height: 475px; 
 	width: 100%; 
 }
+
+.item-complex .item-content{
+	padding: 15px;
+}
