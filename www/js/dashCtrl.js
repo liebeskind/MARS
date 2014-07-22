@@ -5,7 +5,7 @@ angular.module('map.controller', [])
       $scope.map = {
           center: {
             latitude: 32.070123,
-            longitude: 34.793811
+            longitude: 34.79411
           },
           zoom: 16,
           draggable: true
