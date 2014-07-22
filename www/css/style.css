@@ -4,6 +4,8 @@
 }
 
 .angular-google-map-container { 
-	height: 475px; 
+	height: 200px; 
 	width: 100%; 
+	padding: 10px;
+border: 20px solid #000;
 }

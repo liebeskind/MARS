@@ -6,7 +6,7 @@
 // 'starter.services' is found in services.js
 // 'starter.controllers' is found in controllers.js
 // 'map.controller' is found in dashCtrl.js
-angular.module('starter', ['ionic', 'map.controller', 'starter.controllers', 'starter.services'])
+angular.module('starter', ['ionic', 'google-maps', 'map.controller', 'starter.controllers', 'starter.services'])
 
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
@@ -58,11 +58,22 @@ angular.module('starter', ['ionic', 'map.controller', 'starter.controllers', 'st
         }
       }
     })
+    
     .state('tab.friend-detail', {
       url: '/incident/:incidentId',
       views: {
         'tab-incidents': {
           templateUrl: 'templates/incident-detail.html',
+          controller: 'IncidentDetailCtrl'
+        }
+      }
+    })
+
+    .state('tab.success', {
+      url: '/incident/success',
+      views: {
+        'tab-incidents': {
+          templateUrl: 'templates/reportsuccess.html',
           controller: 'IncidentDetailCtrl'
         }
       }

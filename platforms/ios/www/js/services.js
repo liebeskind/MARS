@@ -28,9 +28,8 @@ angular.module('starter.services', [])
       return incidents[incidentId];
     },
     submitIncident: function(incident) {
-      console.log('successfully submitted incident')
       console.log(incident);
-      $location.path('/tabs/dash')
+      return $location.path('/success')
     }
   }
 });

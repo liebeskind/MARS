@@ -2,3 +2,10 @@
 .commentBox {
 	padding-bottom: 100px;
 }
+
+.angular-google-map-container { 
+	height: 200px; 
+	width: 100%; 
+	padding: 10px;
+border: 20px solid #000;
+}

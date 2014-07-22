@@ -30,7 +30,6 @@ angular.module('starter.controllers', [])
 
   $scope.submitReport = function(thisIncident) {
   	//should include {Incident ID, Date/Time Stamp, Comment, Parent Category {id, name}, Sub Category {id, name}, Incident Date }
-  	
   	Incidents.submitIncident(thisIncident);
   }
 })
