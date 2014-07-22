@@ -3,7 +3,7 @@ angular.module('starter.services', [])
 /**
  * A simple example service that returns some data.
  */
-.factory('Incidents', function($location) {
+.factory('Incidents', function($location, $ionicViewService) {
   // Might use a resource here that returns a JSON array
 
   // Some fake testing data
@@ -28,9 +28,9 @@ angular.module('starter.services', [])
       return incidents[incidentId];
     },
     submitIncident: function(incident) {
-      console.log('successfully submitted incident')
       console.log(incident);
-      $location.path('/tabs/dash')
+      $ionicViewService.clearHistory();
+      return $location.path('/success')
     }
   }
 });
