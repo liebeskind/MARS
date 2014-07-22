@@ -8,7 +8,7 @@ angular.module('starter.services', [])
 
   // Some fake testing data
   var incidents = [
-    { id: 0, name: 'Crime' , subcategories: 
+    { id: 0, name: 'Crime', subcategories: 
       [{name:'Theft', distance: 1}, {name:'Sexual Abuse', distance: 1}, {name:'Violence', distance: 1}]
     },
     { id: 1, name: 'Fire', subcategories: 
