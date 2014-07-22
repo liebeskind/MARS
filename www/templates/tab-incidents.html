@@ -1,8 +1,8 @@
 <ion-view title="Incident Report">
   <ion-content class="has-header">
     <ion-list>
-      <ion-item ng-repeat="friend in friends" type="item-text-wrap" href="#/tab/incident/{{friend.id}}">
-        {{friend.name}}
+      <ion-item ng-repeat="incident in incidents" type="item-text-wrap" href="#/tab/incident/{{incident.id}}">
+        {{incident.name}}
       </ion-item>
     </ion-list>
   </ion-content>

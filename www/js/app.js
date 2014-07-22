@@ -58,7 +58,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
       }
     })
     .state('tab.friend-detail', {
-      url: '/incident/:friendId',
+      url: '/incident/:incidentId',
       views: {
         'tab-incidents': {
           templateUrl: 'templates/incident-detail.html',

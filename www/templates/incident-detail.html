@@ -4,14 +4,14 @@
   The FriendsCtrl pulls data from the Friends service (service.js)
   The Friends service returns an array of friend data
 -->
-<ion-view title="{{friend.name}}">
+<ion-view title="{{incidentType.name}}">
   <ion-content has-header="true" padding="true">
 	  
 	  <label class="item item-input item-select">
 	    <div class="input-label">
-	      Type of {{friend.name}}
+	      Type of {{incidentType.name}}
 	    </div> 
-	    <select ng-model = "thisIncident.subcategory" ng-options = "subcategory.name for subcategory in friend.subcategories"></select>
+	    <select ng-model = "thisIncident.subcategory" ng-options = "subcategory.name for subcategory in incidentType.subcategories"></select>
 		</label>
 		<br>
 		<div class="list">
