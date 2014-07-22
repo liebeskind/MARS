@@ -13,6 +13,8 @@ import MarsUtils.IncidentType;
 
 public class SqlDal extends DAL {
 
+
+
 	@Override
 	public void Alert(List<IIncident> incidents) 
 	{
