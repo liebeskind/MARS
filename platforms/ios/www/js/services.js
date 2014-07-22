@@ -33,4 +33,32 @@ angular.module('starter.services', [])
       return $location.path('/success')
     }
   }
+})
+
+.factory('OutsideIncidents', function($location, $ionicViewService) {
+  // Might use a resource here that returns a JSON array
+
+  // Some fake testing data
+  var outsideIncidents = [
+    { id: 0, center: {latitude:32.0678, longitude: 34.7941}, radius: 45, parentcategory: 'Crime', color: 'blue'
+    },
+    { id: 1, center: {latitude:32.0676, longitude: 34.7942}, radius: 25, parentcategory: 'Medical Emergency', color: 'green'
+    },
+    { id: 2, center: {latitude:32.07, longitude: 34.796}, radius: 50, parentcategory: 'Crime', color: 'blue'
+    },
+    { id: 3, center: {latitude:32.074, longitude: 34.794}, radius: 40, parentcategory: 'Fire', color: 'red'
+    },
+    { id: 4, center: {latitude:32.072, longitude: 34.7917}, radius: 35, parentcategory: 'Fire', color: 'red'
+    },
+  ];
+
+  return {
+    all: function() {
+      return outsideIncidents;
+    },
+    get: function(incidentId) {
+      // Simple index lookup
+      return outsideIncidents[incidentId];
+    }
+  }
 });

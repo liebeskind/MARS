@@ -1,8 +1,8 @@
 <ion-view title="Incident Report" class="tabs-item-hide">
   <ion-content class="has-header tabs-item-hide">
     <ion-list style="border: none">
-      <ion-item ng-repeat="incident in incidents" class = "noBorder" type="item-text-wrap" href="#/tab/incident/{{incident.id}}">
-        <img src="img/{{incident.name}}.png" style="width: 100px; display: block; margin-left: auto; margin-right: auto"> 
+			<ion-item ng-repeat="incident in incidents" class = "noBorder" type="item-text-wrap" href="#/tab/incident/{{incident.id}}">
+      	<img src="img/{{incident.name}}.png" style="width: 100px; display: block; margin-left: auto; margin-right: auto">
         <span style="display: block; text-align: center">{{incident.name}}</span>
       </ion-item>
     </ion-list>

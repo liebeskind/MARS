@@ -1,10 +1,13 @@
 angular.module('starter.controllers', [])
 
-.controller('IncidentsCtrl', function($scope, Incidents) {
+.controller('IncidentsCtrl', function($scope, Incidents, $location) {
   $scope.incidents = Incidents.all();
   $scope.showReport = true;
 
-  console.log('HideCtrl');
+  $scope.goHome = function() {
+    $location.path('/#')
+  }
+
   var tabs = document.querySelectorAll('div.tabs')[0];
   tabs = angular.element(tabs);
   tabs.css('display', 'none');
