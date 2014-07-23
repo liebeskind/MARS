@@ -49,6 +49,16 @@ angular.module('starter', ['ionic', 'google-maps', 'map.controller', 'starter.co
       }
     })
 
+    .state('tab.incidentList', {
+      url: '/incidentList',
+      views: {
+        'tab-incidentList': {
+          templateUrl: 'templates/tab-incidentList.html',
+          controller: 'IncidentListCtrl'
+        }
+      }
+    })    
+
     .state('tab.friends', {
       url: '/incidents',
       views: {

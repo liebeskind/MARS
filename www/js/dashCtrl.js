@@ -1,6 +1,6 @@
 angular.module('map.controller', [])
 
-    .controller('DashCtrl', function($scope, $http) {
+    .controller('DashCtrl', function($scope, $http, $location, IncidentList) {
       
       $scope.map = {
           center: {
@@ -21,6 +21,10 @@ angular.module('map.controller', [])
           //error
           console.log('error');
       });
+
+  $scope.switchView = function() {
+    $location.path('/#/tabs/incidentlist')
+  }
 
 		  var tabs = document.querySelectorAll('div.tabs')[0];
 		  tabs = angular.element(tabs);
