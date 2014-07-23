@@ -2,9 +2,9 @@
 
 	<ion-view>
 	  <ion-nav-buttons side="right">
-	  <a href="#/tab/incidentlist">
-	   <button class="button button-icon icon ion-radio-waves"></button>
-	 </a>
+	  <!-- <a href="#/tab/incidentlist"> -->
+	   <button class="button button-icon icon ion-radio-waves" ng-click = "switchView()"></button>
+	 <!-- </a> -->
 	  </ion-nav-buttons>
 	 ...
 	</ion-view>
@@ -14,9 +14,9 @@
 		<marker coords='map.center' icon="'https://chart.googleapis.com/chart?chst=d_map_pin_letter&chld=U%7C0000FF%7CFFFFFF'"></marker>
 		
 
-		<marker ng-if="circle.parentCategory.name == 'Crime'" ng-repeat="circle in circles" coords='circle.location' icon="'/img/Crime-marker.png'"></marker>
-		<marker ng-if="circle.parentCategory.name == 'Fire'" ng-repeat="circle in circles" coords='circle.location' icon="'/img/Fire-marker.png'"></marker>
-		<marker ng-if="circle.parentCategory.name == 'Medical Emergency'" ng-repeat="circle in circles" coords='circle.location' icon="'/img/Medical Emergency-marker.png'"></marker>
+		<marker ng-if="circle.parentCategory.name == 'Crime'" ng-repeat="circle in circles" coords='circle.location' icon="'img/Crime-marker.png'"></marker>
+		<marker ng-if="circle.parentCategory.name == 'Fire'" ng-repeat="circle in circles" coords='circle.location' icon="'img/Fire-marker.png'"></marker>
+		<marker ng-if="circle.parentCategory.name == 'Medical Emergency'" ng-repeat="circle in circles" coords='circle.location' icon="'img/Medical Emergency-marker.png'"></marker>
 
 	</google-map>
   </ion-content>

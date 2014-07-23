@@ -23,7 +23,7 @@ angular.module('map.controller', [])
       });
 
   $scope.switchView = function() {
-    $location.path('/#/tabs/incidentlist')
+    $location.path('/tab/incidentlist')
   }
 
 		  var tabs = document.querySelectorAll('div.tabs')[0];
