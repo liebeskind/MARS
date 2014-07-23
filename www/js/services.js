@@ -28,7 +28,11 @@ angular.module('starter.services', [])
       return incidents[incidentId];
     },
     submitIncident: function(incident) {
-      console.log(incident);
+      
+      console.log("incident to add", incident);
+
+      myDataRef.push(incident);
+
       $ionicViewService.clearHistory();
       return $location.path('/success')
     }
