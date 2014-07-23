@@ -14,12 +14,18 @@
 	    <select ng-model = "thisIncident.subcategory" ng-options = "subcategory.name for subcategory in incidentType.subcategories"></select>
 		</label>
 		<br>
-		<div class="list">
-		  <label class="item item-input">
-		    <span class="input-label">Incident Location</span>
-		    <input type="text" ng-model = "thisIncident.location.text" onclick = "this.select();">
-
-		  </label>
+		<div class="card" id="newIncidentMap">
+		  <div class="item item-text-wrap">
+		  	<span class="input-label" style="width: 100%;padding-top: 0px;">Incident Location</span>
+		    <google-map center="map.center" zoom="map.zoom" draggable="true" options="{'zoomControl':false, 'scrollwheel': true, 'streetViewControl': false, 'mapTypeControl': false}">
+				<marker ng-model="selectedLocation" coords='map.center' icon="'https://chart.googleapis.com/chart?chst=d_map_pin_letter&chld=U%7C0000FF%7CFFFFFF'" events="{'position_changed': 'markerMoved'}">
+				</marker>
+			</google-map>	
+			<div>{{map.center}}</div>
+			<input type="text" ng-model="thisIncident.location.text" >
+		  </div>
+		</div>
+		<div class="list">		  
 		  <label class="item item-input">
 		    <span class="input-label">Incident Date</span>
 		    <input type="date" ng-model="thisIncident.date" min="2014-01-01" max="2014-8-5">
