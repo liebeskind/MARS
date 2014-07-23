@@ -17,3 +17,31 @@
 .item.noBorder, .item h1, .item h2, .item h3, .item h4, .item h5, .item h6, .item p, .item-content, .item-content h1, .item-content h2, .item-content h3, .item-content h4, .item-content h5, .item-content h6, .item-content p {
 	border-style: hidden;
 }
+
+.backbuttons .button-icon .icon .ion-ios7-arrow-back {
+	text: bold;
+}
+
+#newIncidentMap .angular-google-map-container { 
+	height: 150px; 
+	width: 100%; 
+}
+
+#newIncidentMap.card{
+	margin-bottom: 10px;
+	margin-left: 0px;
+	margin-right: 0px;
+	margin-top: 0px;
+}
+
+/*
+.bar{
+	height: 54px;
+}
+.bar .title{
+	padding: 10px;	
+}
+.bar .button, .bar .buttons{
+	padding: 10px;	
+}
+*/

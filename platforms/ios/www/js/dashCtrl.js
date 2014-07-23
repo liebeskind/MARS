@@ -1,19 +1,30 @@
 angular.module('map.controller', [])
 
-    .controller('DashCtrl', function($scope, OutsideIncidents) {
+    .controller('DashCtrl', function($scope, $http, $location, IncidentList) {
       
       $scope.map = {
           center: {
             latitude: 32.070123,
-            longitude: 34.793811
+            longitude: 34.79411
           },
           zoom: 16,
           draggable: true
       };
 
-      $scope.circles = OutsideIncidents.all();
+      $http({
+          url: "https://vivid-fire-3100.firebaseio.com/.json",
+          method: "GET"
+      }).success(function(data, status, headers, config) {
+          console.log("incidents", data);
+          $scope.circles = data;
+      }).error(function(data, status, headers, config) {
+          //error
+          console.log('error');
+      });
 
-      console.log($scope.circles)
+  $scope.switchView = function() {
+    $location.path('/#/tabs/incidentlist')
+  }
 
 		  var tabs = document.querySelectorAll('div.tabs')[0];
 		  tabs = angular.element(tabs);

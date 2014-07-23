@@ -39,6 +39,26 @@ angular.module('starter.services', [])
   }
 })
 
+.factory('IncidentList', function($location, $ionicViewService) {
+  var incidents;
+  var fb = new Firebase('https://vivid-fire-3100.firebaseio.com/')
+  
+  // fb.once('value', function(data) {
+  //   incidents = data.val(); 
+  // });
+
+  fb.on('value', function(data) {
+    incidents = data.val(); 
+    // alert(data.val())
+  });
+
+  return {
+    all: function() {
+      return incidents;
+    }
+  }
+})
+
   /*
   var outsideIncidents = [
     { id: 0, center: {latitude:32.0678, longitude: 34.7941}, radius: 45, parentcategory: 'Crime', color: 'blue'

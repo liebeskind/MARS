@@ -1,5 +1,13 @@
-<ion-view title="Incident Report" class="tabs-item-hide">
+<ion-view title="Incident Report" >
+
+	<ion-nav-buttons side="left">
+      <ion-back-button class="backbuttons button-icon icon ion-ios7-arrow-back" ng-click="goHome()">
+        Back
+      </ion-back-button>
+  </ion-nav-buttons>
+
   <ion-content class="has-header tabs-item-hide">
+    <h4 style="text-align: center;">Choose one category please</h4>
     <ion-list style="border: none">
 			<ion-item ng-repeat="incident in incidents" class = "noBorder" type="item-text-wrap" href="#/tab/incident/{{incident.id}}">
       	<img src="img/{{incident.name}}.png" style="width: 100px; display: block; margin-left: auto; margin-right: auto">
