@@ -14,30 +14,14 @@ angular.module('starter.controllers', [])
 })
 
 .controller('IncidentDetailCtrl', function($scope, $stateParams, Incidents) {
-  $scope.map = {
-        center: {
-          latitude: 32.070123,
-          longitude: 34.79411
-        },
-        zoom: 16
-    };
-
-  $scope.markerMoved = function () {
-    console.log("moved");
-  }
+  $scope.map = {zoom: 16};
 
   $scope.incidentType = Incidents.get($stateParams.incidentId);
   $scope.thisIncident = {parentCategory: {name: $scope.incidentType.name, id: $scope.incidentType.id}, id: Math.random()};
   $scope.thisIncident.currentDate = new Date(); // sets default date/time to now
-  
   $scope.thisIncident.date = new Date(); // sets default date/time to now
-
-  console.log($scope.incidentType)
   $scope.thisIncident.subcategory = $scope.incidentType.subcategories[0]
-  $scope.thisIncident.location = {};
-  $scope.thisIncident.location.text = "Use Current Location"; // sets default date/time to now
-  $scope.thisIncident.location.lat = 32.070123; // sets default date/time to now
-  $scope.thisIncident.location.lon = 34.793811; // sets default date/time to now
+  $scope.thisIncident.location = {latitude: 32.070123, longitude: 34.79411};
 
   $scope.refreshGrid = function (page) {
     $http({

@@ -53,7 +53,7 @@ angular.module('starter', ['ionic', 'google-maps', 'incidentList.controllers', '
       url: '/incidentlist',
       views: {
         'tab-dash': {
-          templateUrl: 'templates/tab-incidentList.html',
+          templateUrl: 'templates/tab-incidentlist.html',
           controller: 'IncidentListCtrl'
         }
       }

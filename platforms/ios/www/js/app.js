@@ -59,6 +59,16 @@ angular.module('starter', ['ionic', 'google-maps', 'incidentList.controllers', '
       }
     })    
 
+    .state('tab.incident-detail', {
+      url: '/incidentlist/:incidentId',
+      views: {
+        'tab-dash': {
+          templateUrl: 'templates/incidentlist-detail.html',
+          controller: 'IncidentListDetailCtrl'
+        }
+      }
+    })
+
     .state('tab.friends', {
       url: '/incidents',
       views: {

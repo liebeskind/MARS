@@ -55,6 +55,10 @@ angular.module('starter.services', [])
   return {
     all: function() {
       return incidents;
+    },
+    get: function(incidentId) {
+      console.log(incidents[incidentId])
+      return incidents[incidentId];
     }
   }
 })

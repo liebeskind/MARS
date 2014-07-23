@@ -1,12 +1,19 @@
 <ion-view title="Current Incidents" >
 
   <ion-content class="has-header tabs-item-hide">
+
+  <!-- <div style="display: table; margin: 0 auto; padding: 20px">
+    <img class = 'crime {{class}}' src="img/Crime.png" style="width: 60px; display: inline" ng-click = "clicked('crime')">
+    <img class = 'fire {{class}}' src="img/Fire.png" style="width: 60px; display: inline" ng-click = "clicked('fire')">
+    <img class = 'medical {{class}}' src="img/Medical Emergency.png" style="width: 60px; display: inline" ng-click = "clicked('medical')">
+    <img class = 'batman {{class}}' src="img/batman.jpg" style="width: 70px; display: inline" ng-click = "clicked('batman')">
+  </div> -->
     <!-- <h4 style="text-align: center;">Choose one category please</h4> -->
     <ion-list style="border: none">
-			<ion-item ng-repeat="incident in incidents" type="item-text-wrap">
-      	<img src="img/{{incident.parentCategory.name}}.png" style="width: 25px; display: block; float: left">
-        <span style = "padding-left: 10px">{{incident.parentCategory.name}}: </span>
-        <span>{{incident.subcategory.name}}</span>
+			<ion-item ng-repeat="incident in incidents" type="item-text-wrap" ng-click="showDetails(incident)" >
+        <img src="img/{{incident.parentCategory.name}}.png" style="width: 25px; display: block; float: left" >
+        <!-- <span style = "padding-left: 10px">{{incident.parentCategory.name}}: </span> -->
+        <span style = "padding-left: 10px">{{incident.subcategory.name}}</span>
       </ion-item>
     </ion-list>
   </ion-content>
