@@ -5,7 +5,7 @@
   The Friends service returns an array of friend data
 -->
 <ion-view title="{{incidentType.name}}">
-  <ion-content has-header="true" padding="true">
+  <ion-content scroll="false" has-header="true" padding="true">
 	  
 	  <label class="item item-input item-select">
 	    <div class="input-label">
@@ -13,16 +13,13 @@
 	    </div> 
 	    <select ng-model = "thisIncident.subcategory" ng-options = "subcategory.name for subcategory in incidentType.subcategories"></select>
 		</label>
-		<br>
 		<div class="card" id="newIncidentMap">
 		  <div class="item item-text-wrap">
 		  	<span class="input-label" style="width: 100%;padding-top: 0px;">Incident Location</span>
-		    <google-map center="map.center" zoom="map.zoom" draggable="true" options="{'zoomControl':false, 'scrollwheel': true, 'streetViewControl': false, 'mapTypeControl': false}">
-				<marker ng-model="selectedLocation" coords='map.center' icon="'https://chart.googleapis.com/chart?chst=d_map_pin_letter&chld=U%7C0000FF%7CFFFFFF'" events="{'position_changed': 'markerMoved'}">
+		    <google-map center="thisIncident.location" zoom="map.zoom" draggable="true" options="{'zoomControl':false, 'scrollwheel': true, 'streetViewControl': false, 'mapTypeControl': false}">
+				<marker coords='thisIncident.location' icon="'https://chart.googleapis.com/chart?chst=d_map_pin_letter&chld=A%7CFF0000%7CFF0000'" events="{'position_changed': 'markerMoved'}">
 				</marker>
-			</google-map>	
-			<div>{{map.center}}</div>
-			<input type="text" ng-model="thisIncident.location.text" >
+			</google-map>
 		  </div>
 		</div>
 		<div class="list">		  
@@ -31,10 +28,9 @@
 		    <input type="date" ng-model="thisIncident.date" min="2014-01-01" max="2014-8-5">
 		    <div>{{thisIncident.date}}</div>
 		  </label>
-		  <br>
-		  <label class="item item-input commentBox">
+		  <label class="item item-input" style="padding: 6px 0 5px 8px;">
 		    <span class="input-label">Comments</span>
-		    <input type="text" ng-model = "thisIncident.comments">
+		    <textarea ng-model = "thisIncident.comments" style="resize: none;"></textarea>
 		  </label>
 		</div>
 
