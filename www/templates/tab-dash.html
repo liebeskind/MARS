@@ -10,7 +10,7 @@
 	</ion-view>
 
   <ion-content scroll = 'false' class="has-header">
-	<google-map center="map.center" zoom="map.zoom" draggable="true">
+	<google-map center="map.center" zoom="map.zoom" options="{'draggable':true, 'zoomControl':true, 'scrollwheel': true, 'streetViewControl': false}">
 		<marker coords='map.center' icon="'https://chart.googleapis.com/chart?chst=d_map_pin_letter&chld=U%7C0000FF%7CFFFFFF'">
 		</marker>
 		<circle ng-repeat="circle in circles" center='circle.center' radius='circle.radius'>

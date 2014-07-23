@@ -14,6 +14,18 @@ angular.module('starter.controllers', [])
 })
 
 .controller('IncidentDetailCtrl', function($scope, $stateParams, Incidents) {
+  $scope.map = {
+        center: {
+          latitude: 32.070123,
+          longitude: 34.79411
+        },
+        zoom: 16
+    };
+
+  $scope.markerMoved = function () {
+    console.log("moved");
+  }
+
   $scope.incidentType = Incidents.get($stateParams.incidentId);
   $scope.thisIncident = {parentCategory: {name: $scope.incidentType.name, id: $scope.incidentType.id}, id: Math.random()};
   $scope.thisIncident.currentDate = new Date(); // sets default date/time to now
