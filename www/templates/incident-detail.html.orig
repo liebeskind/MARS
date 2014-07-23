@@ -14,6 +14,7 @@
 	    <select ng-model = "thisIncident.subcategory" ng-options = "subcategory.name for subcategory in incidentType.subcategories"></select>
 		</label>
 		<br>
+<<<<<<< HEAD
 		<div class="card" id="newIncidentMap">
 		  <div class="item item-text-wrap">
 		  	<span class="input-label" style="width: 100%;padding-top: 0px;">Incident Location</span>
@@ -26,6 +27,14 @@
 		  </div>
 		</div>
 		<div class="list">		  
+=======
+		<div class="list">
+		  <label class="item item-input">
+		    <span class="input-label">Incident Location</span>
+		    <input type="text" ng-model = "thisIncident.location.text" onclick = "this.select();">
+
+		  </label>
+>>>>>>> 209933ac05ff80ebb5bc4a14afdfe9c744767d98
 		  <label class="item item-input">
 		    <span class="input-label">Incident Date</span>
 		    <input type="date" ng-model="thisIncident.date" min="2014-01-01" max="2014-8-5">
