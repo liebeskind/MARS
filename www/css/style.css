@@ -22,9 +22,14 @@
 	text: bold;
 }
 
+/*
 .bar{
 	height: 54px;
 }
 .bar .title{
 	padding: 10px;	
 }
+.bar .button, .bar .buttons{
+	padding: 10px;	
+}
+*/

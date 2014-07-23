@@ -1,7 +1,8 @@
 <ion-view title="MARS">
   <ion-content scroll = 'false' class="has-header">
 	<google-map center="map.center" zoom="map.zoom">
-		<circle center="map.center" radius='12'></circle>
+		<marker coords='map.center' icon="'https://chart.googleapis.com/chart?chst=d_map_spin&chld=2|0|F0F0F0|10|b|You%27re%20here'">
+		</marker>
 		<circle ng-repeat="circle in circles" center='circle.center' radius='circle.radius'>
 		</circle>
 	</google-map>

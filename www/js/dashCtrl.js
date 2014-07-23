@@ -1,6 +1,6 @@
 angular.module('map.controller', [])
 
-    .controller('DashCtrl', function($scope, OutsideIncidents) {
+    .controller('DashCtrl', function($scope, $http) {
       
       $scope.map = {
           center: {
@@ -11,9 +11,16 @@ angular.module('map.controller', [])
           draggable: true
       };
 
-      $scope.circles = OutsideIncidents.all();
-
-      console.log($scope.circles)
+      $http({
+          url: "https://vivid-fire-3100.firebaseio.com/.json",
+          method: "GET"
+      }).success(function(data, status, headers, config) {
+          console.log("incidents", data);
+          $scope.circles = data;
+      }).error(function(data, status, headers, config) {
+          //error
+          console.log('error');
+      });
 
 		  var tabs = document.querySelectorAll('div.tabs')[0];
 		  tabs = angular.element(tabs);

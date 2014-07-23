@@ -35,10 +35,6 @@ angular.module('starter.services', [])
   }
 })
 
-.factory('OutsideIncidents', function($location, $ionicViewService) {
-  // Might use a resource here that returns a JSON array
-
-  // Some fake testing data
   /*
   var outsideIncidents = [
     { id: 0, center: {latitude:32.0678, longitude: 34.7941}, radius: 45, parentcategory: 'Crime', color: 'blue'
@@ -54,22 +50,4 @@ angular.module('starter.services', [])
   ];
   */
 
- // ajax this and get the first elemnet https://vivid-fire-3100.firebaseio.com/.json
-
-  var outsideIncidents = [];
-  myDataRef.on('child_added', function(snapshot) {
-    var incident = snapshot.val();
-    outsideIncidents.push(incident);
-    console.log(outsideIncidents);
-  });
-
-  return {
-    all: function() {
-      return outsideIncidents;
-    },
-    get: function(incidentId) {
-      // Simple index lookup
-      return outsideIncidents[incidentId];
-    }
-  }
-});
+;
